@@ -50,10 +50,15 @@
 (define-key global-map "\C-l" 'Control-L-prefix)
 (fset 'Control-L-prefix ctl-l-map)
 
-(define-key ctl-l-map "aa"		'anything)
+(define-key ctl-l-map "aa"		'fg/anything-jump)
+(define-key ctl-l-map "ab"		'anything-browse-code)
 (define-key ctl-l-map "af"		'anything-find-files)
-(define-key ctl-l-map "ac"		'fg/anything-ac)
+(define-key ctl-l-map "ag"		'fg/anything-rgrep)
+(define-key ctl-l-map "ai"		'fg/anything-info-pages)
 (define-key ctl-l-map "al"		'anything-locate)
+(define-key ctl-l-map "am"		'fg/anything-man-pages)
+(define-key ctl-l-map "at"		'anything-top)
+(define-key ctl-l-map "ax"		'anything-M-x)
 (define-key ctl-l-map "caa"		'align)
 (define-key ctl-l-map "car"		'align-regexp)
 (define-key ctl-l-map "csb"		'hs-show-block)
@@ -225,17 +230,52 @@
 (require 'icicles)
 (icy-mode)
 
+;; anything
 (require 'anything)
 (require 'anything-config)
 (require 'anything-match-plugin)
-(defun fg/anything-ac ()
+(require 'anything-ack)
+(defun fg/anything-jump ()
   (interactive)
   (anything-other-buffer
-   '(anything-c-source-emacs-commands
-     anything-c-source-complex-command-history
-     anything-c-source-extended-command-history)
-   " *fg/anything-ac*"))
+   '(anything-c-source-buffers
+	 anything-c-source-recentf
+	 fg/anything-c-source-file-search)
+   " *fg/anything-jump*"))
+(defun fg/anything-man-pages ()
+  (interactive)
+  (anything-other-buffer
+   '(anything-c-source-man-pages)
+   " *fg/anything-man-pages*"))
+(defun fg/anything-info-pages ()
+  (interactive)
+  (anything-other-buffer
+   '(anything-c-source-info-pages)
+   " *fg/anything-info-pages*"))
 (anything-dired-bindings 1)
+
+;; http://www.emacswiki.org/emacs/AnythingSources#toc14
+(defvar fg/anything-c-source-file-search
+  '((name . "File Search")
+    (init . (lambda () (setq anything-default-directory default-directory)))
+    (candidates . (lambda ()
+                    (let ((args
+                           (format "%s -iname '*%s*' -print"
+                                   anything-default-directory
+                                   anything-pattern)))
+					  (message "args: %s" args)
+					  (start-process-shell-command "file-search-process" nil
+												   "find" args))))
+    (type . file)
+    (requires-pattern . 4)
+    (delayed))
+  "Source for searching matching files recursively.")
+
+(defun fg/anything-rgrep ()
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+	(call-interactively 'anything-do-grep)))
+
 
 (require 'info)
 (if running-on-mswindows-p
