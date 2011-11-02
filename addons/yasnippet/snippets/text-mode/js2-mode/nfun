@@ -1,0 +1,7 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: nfun
+# contributor: Felix Geller <fgeller@gmail.com>
+# --
+function $1 ($2) {
+    $0
+}

@@ -1,0 +1,7 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: afun
+# contributor: Felix Geller <fgeller@gmail.com>
+# --
+$1: function ($2) {
+    $0
+}

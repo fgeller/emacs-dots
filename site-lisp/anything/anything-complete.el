@@ -1,0 +1,1 @@
+../../addons/anything/extensions/anything-complete.el
