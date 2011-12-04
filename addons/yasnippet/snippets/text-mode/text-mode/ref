@@ -1,7 +1,6 @@
 # -*- coding: utf-8; mode: snippet -*-
-# name: afun
+# name: ref
+# key: ref
 # contributor: Felix Geller <fgeller@gmail.com>
 # --
-function ($1) {
-	$0
-}
+This references [#$1].$0
