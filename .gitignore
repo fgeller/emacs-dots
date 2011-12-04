@@ -6,4 +6,9 @@ tramp
 .org-id-locations
 %backup%~
 image-dired
+saved#*
 saved
+elpa
+url
+.emacs.desktop
+.emacs.desktop.lock
