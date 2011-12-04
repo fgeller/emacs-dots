@@ -35,6 +35,7 @@
 (require 'init-title-bar)
 (require 'init-themes)
 (require 'init-osx-keys)
+(require 'init-keybindings)
 (require 'init-gui-frames)
 (require 'init-proxies)
 (require 'init-dired)
