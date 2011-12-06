@@ -55,7 +55,7 @@
 (require 'init-erc)
 (require 'init-email)
 (require 'init-editing-utils)
-
+(require 'init-vc)
 (require 'init-gnuplot)
 (require 'init-crontab)
 (require 'init-markdown)
