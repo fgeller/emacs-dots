@@ -14,3 +14,4 @@ url
 .emacs.desktop.lock
 .svn
 .session
+.elc
