@@ -67,7 +67,6 @@
 (require 'init-nxml)
 (require 'init-css)
 (require 'init-python-mode)
-(require 'init-haskell)
 
 (require 'init-lisp)
 (require 'init-slime)
