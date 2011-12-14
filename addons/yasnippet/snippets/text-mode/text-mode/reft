@@ -1,0 +1,6 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: reft
+# key: reft
+# contributor: Felix Geller <fgeller@gmail.com>
+# --
+This references ticket [#$1].$0

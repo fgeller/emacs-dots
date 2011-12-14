@@ -1,0 +1,6 @@
+# -*- coding: utf-8; mode: snippet -*-
+# name: refc
+# key: refc
+# contributor: Felix Geller <fgeller@gmail.com>
+# --
+This references commit [$1].$0
