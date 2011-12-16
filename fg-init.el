@@ -28,15 +28,16 @@
 ;;----------------------------------------------------------------------------
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
+
 (require 'init-elpa)
 (require 'init-exec-path) ;; Set up $PATH
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-title-bar)
 (require 'init-themes)
-(require 'init-osx-keys)
 (require 'init-keybindings)
 (require 'init-gui-frames)
+(require 'init-maxframe)
 (require 'init-proxies)
 (require 'init-dired)
 (require 'init-isearch)
@@ -68,10 +69,11 @@
 (require 'init-nxml)
 (require 'init-css)
 (require 'init-python-mode)
-
 (require 'init-lisp)
 (require 'init-slime)
 (require 'init-common-lisp)
+(require 'init-lighthouse)
+(require 'init-sql)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
