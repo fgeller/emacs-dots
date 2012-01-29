@@ -16,3 +16,4 @@ url
 .session
 *.elc
 .bzr
+emacs-persistent-scratch*
