@@ -1,0 +1,1 @@
+/Users/fgeller/.emacs.d/addons/anything/extensions/anything-obsolete.el
