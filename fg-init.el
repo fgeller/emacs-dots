@@ -32,8 +32,7 @@
 (require 'init-elpa)
 (require 'init-exec-path) ;; Set up $PATH
 (require 'init-frame-hooks)
-(require 'init-xterm)
-(require 'init-title-bar)
+(require 'init-term)
 (require 'init-themes)
 (require 'init-keybindings)
 (require 'init-gui-frames)
@@ -58,14 +57,12 @@
 (require 'init-email)
 (require 'init-editing-utils)
 (require 'init-vc)
-(require 'init-gnuplot)
 (require 'init-crontab)
 (require 'init-markdown)
 (require 'init-csv)
 (require 'init-javascript)
 (require 'init-sh)
 (require 'init-org)
-(require 'init-htmlize)
 (require 'init-nxml)
 (require 'init-css)
 (require 'init-python-mode)
@@ -74,9 +71,9 @@
 (require 'init-common-lisp)
 (require 'init-lighthouse)
 (require 'init-sql)
-
-(when *spell-check-support-enabled*
-  (require 'init-spelling))
+(require 'init-mercurial)
+(require 'init-git)
+(require 'init-spelling)
 
 (require 'server)
 (unless (server-running-p)
