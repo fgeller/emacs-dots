@@ -17,3 +17,4 @@ url
 *.elc
 .bzr
 emacs-persistent-scratch*
+/.bookmarks.el
